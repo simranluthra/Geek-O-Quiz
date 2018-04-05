@@ -1,0 +1,43 @@
+li:hover{
+  background-color: #b6cbed;
+}
+nav{
+  padding: 0px;
+}
+.container-fluid{
+  padding: 0px;
+}
+.links{
+  color: black;
+}
+.links:hover{
+  text-decoration: none;
+  color: green;
+}
+.jumbotron{
+  margin-top: 0 auto;
+  background-image: url("jumbotron1.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+footer{
+  background-image: url("jumbotron1.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.compiler{
+  float:right;
+  border: 1px grey solid;
+  padding: 10px;
+}
+hr{
+  display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    text-align: left;
+    width: 50%;
+}
