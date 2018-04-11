@@ -41,3 +41,13 @@ hr{
     text-align: left;
     width: 50%;
 }
+.loggedin-div{
+  float: right;
+  margin-left: 320px;
+}
+.footer-end:hover{
+  background-color: transparent;
+}
+.login-button{
+  margin-left: 500px;
+}
