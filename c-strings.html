@@ -1,0 +1,369 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>Strings</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#btn-submit").click(function(){
+    //      if($('.score').is(':checked')){
+      //      score = score+1;
+      //    alert(score);
+      //    }
+      //alert( $('input.score:radio:checked').length );
+    //  document.write($('input.score:radio:checked').length);
+        $("#output").html($('input.score:radio:checked').length);
+      })
+      $("#btn-reset").click(function(){
+        $("#myForm")[0].reset();
+        $("#output").html($('input.score:radio:checked').length);
+        $('h1').hide();
+      });
+      });
+    //  function reset(){
+    //    document.getElementById("myForm").reset();
+  //    }
+    </script>
+
+
+  </head>
+  <body ng-app="">
+
+    <div class="container-fluid">
+    <nav class="navbar bg-dark text-white">
+    <h2>Strings<h2>
+</nav>
+</div>
+    <br><br>
+
+    <div class="container">
+      <div class="compiler">
+        <h3>Having trouble solving the problem</h3>
+        <p>Code, Compile & Run</p>
+        <a href="https://www.codechef.com/ide"><button class="btn btn-info">Run on IDE</button></a>
+      </div>
+
+
+
+    <form id="myForm">
+      Question 1
+      <hr>
+      # include "stdio.h"<br>
+
+      int main()<br>
+      {<br>
+         char str1[] = "GeeksQuiz";<br>
+         char str2[] = {'G', 'e', 'e', 'k', 's', 'Q', 'u', 'i', 'z'};<br>
+         int n1 = sizeof(str1)/sizeof(str1[0]);<br>
+         int n2 = sizeof(str2)/sizeof(str2[0]);<br>
+         printf("n1 = %d, n2 = %d", n1, n2);<br>
+         return 0;<br>
+      }
+           <br>
+
+     <input type="radio" ng-model="c" value="1" class="score">n1 = 10, n2 = 9<br>
+     <input type="radio" ng-model="c" value="2">n1 = 10, n2 = 10<br>
+     <input type="radio" ng-model="c" value="3">n1 = 9, n2 = 9<br>
+     <input type="radio" ng-model="c" value="4">n1 = 9, n2 = 10<br><br>
+
+
+     <div ng-switch="c">
+       <div ng-switch-when="1">
+    <h1>n1 = 10, n2 = 9</h1>
+   </div>
+   <div ng-switch-when="2">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="3">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="4">
+    <h1>Wrong</h1>
+   </div>
+   </div>
+  Question 2
+  <hr>
+  Predict the output?<br>
+  #include "stdio.h"<br>
+  int fun(char *str1)<br>
+  {<br>
+    char *str2 = str1;<br>
+    while(*++str1);<br>
+    return (str1-str2);<br>
+  }<br>
+
+  int main()<br>
+  {<br>
+    char *str = "GeeksQuiz";<br>
+    printf("%d", fun(str));<br>
+    return 0;<br>
+  }<br>
+  <br>
+         <input type="radio" ng-model="ques2" value="1">10<br>
+         <input type="radio" ng-model="ques2" value="2" class="score">9<br>
+         <input type="radio" ng-model="ques2" value="3">8<br>
+         <input type="radio" ng-model="ques2" value="4">Random Number<br><br>
+
+
+
+  <div ng-switch="ques2">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>9</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+</div>
+  Question 3
+  <hr>
+  What does the following fragment of C-program print?<br>
+  char c[] = "GATE2011"; <br>
+  char *p =c; <br>
+  printf("%s", p + p[3] - p[1]) ;<br>
+<br><br>
+         <input type="radio" ng-model="ques3" value="1">GATE2011<br>
+         <input type="radio" ng-model="ques3" value="2">E2011<br>
+         <input type="radio" ng-model="ques3" value="3" class="score">2011<br>
+         <input type="radio" ng-model="ques3" value="4">011<br><br>
+
+
+  <div ng-switch="ques3">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>2011</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  Question 4
+  <hr>
+  #include"stdio.h"<br>
+  int main()<br>
+  {<br>
+      char str[] = "GeeksQuiz";<br>
+      printf("%s %s %s\n", &str[5], &5[str], str+5);<br>
+      printf("%c %c %c\n", *(str+6), str[6], 6[str]);<br>
+      return 0;<br>
+  }
+<br><br>
+         <input type="radio" ng-model="ques4" value="1">Runtime Error<br>
+         <input type="radio" ng-model="ques4" value="2">Compiler Error<br>
+         <input type="radio" ng-model="ques4" value="3">uiz uiz uiz u u u<br>
+         <input type="radio" ng-model="ques4" value="4" class="score">Quiz Quiz Quiz u u u<br><br>
+
+
+  <div ng-switch="ques4">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Quiz Quiz Quiz u u u</h1>
+</div>
+  </div>
+
+  Question 5
+  <hr>
+  #include "stdio.h"<br>
+  int main() <br>
+  { <br>
+    char arr[] = "GeeksQuiz";<br>
+    printf("%s", ?); <br>
+    return 0; <br>
+  }
+<br><br>
+         <input type="radio" ng-model="ques5" value="1">arr<br>
+         <input type="radio" ng-model="ques5" value="2" class="score">(arr+5)<br>
+         <input type="radio" ng-model="ques5" value="3">(arr+4)<br>
+         <input type="radio" ng-model="ques5" value="4">Not possible<br><br>
+
+
+  <div ng-switch="ques5">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>(arr+5)</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+
+  Question 6
+  <hr>
+  Output?<br>
+  int main()<br>
+  {<br>
+      char a[2][3][3] = {'g','e','e','k','s','q','u','i','z'};<br>
+      printf("%s ", **a);<br>
+      return 0;<br>
+  }
+<br><br>
+         <input type="radio" ng-model="ques6" value="1">Compiler Error<br>
+         <input type="radio" ng-model="ques6" value="2">geeksquiz followed by garbage characters<br>
+         <input type="radio" ng-model="ques6" value="3" class="score">geeksquiz<br>
+         <input type="radio" ng-model="ques6" value="4">Runtime Error<br><br>
+
+
+  <div ng-switch="ques6">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>geeksquiz</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+
+  Question 7
+  <hr>
+  Consider the following C program segment:<br>
+  char p[20]; <br>
+  char *s = "string"; <br>
+  int length = strlen(s); <br>
+  int i; <br>
+  for (i = 0; i < length; i++) <br>
+      p[i] = s[length — i]; <br>
+  printf("%s", p);
+<br><br>
+         <input type="radio" ng-model="ques7" value="1">gnirts<br>
+         <input type="radio" ng-model="ques7" value="2">gnirt<br>
+         <input type="radio" ng-model="ques7" value="3">string<br>
+         <input type="radio" ng-model="ques7" value="4" class="score">no output is printed<br><br>
+
+
+  <div ng-switch="ques7">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>no output is printed</h1>
+</div>
+  </div>
+
+  Question 8
+  <hr>
+  #include "stdio.h"<br>
+  int main()<br>
+  {<br>
+      char str[] = "%d %c", arr[] = "GeeksQuiz";<br>
+      printf(str, 0[arr], 2[arr + 3]);<br>
+      return 0;<br>
+  }
+<br><br>
+         <input type="radio" ng-model="ques8" value="1">G Q<br>
+         <input type="radio" ng-model="ques8" value="2">71 81<br>
+         <input type="radio" ng-model="ques8" value="3" class="score">71 Q<br>
+         <input type="radio" ng-model="ques8" value="4">Compile time error<br><br>
+
+
+  <div ng-switch="ques8">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>71 Q</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+
+  Question 9
+  <hr>
+    int main()<br>
+    {<br>
+      char p[] = "geeksquiz";<br>
+      char t;<br>
+      int i, j;<br>
+      for(i=0,j=strlen(p); i<j; i++)<br>
+      {<br>
+          t = p[i];<br>
+          p[i] = p[j-i];<br>
+          p[j-i] = t;<br>
+      }<br>
+      printf("%s", p);<br>
+      return 0;<br>
+  }
+
+<br><br>
+         <input type="radio" ng-model="ques9" value="1">ziuqskeeg<br>
+         <input type="radio" ng-model="ques9" value="2" class="score">Nothing is printed on the screen<br>
+         <input type="radio" ng-model="ques9" value="3">geeksquiz<br>
+         <input type="radio" ng-model="ques9" value="4">gggggggg<br><br>
+
+
+  <div ng-switch="ques9">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Nothing is printed on the screen</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  <button type="submit" name="submit" id="btn-submit">Submit</button>
+  <button type="reset" name="Reset" onclick="reset()" id="btn-reset">Reset</button><br><br>
+  <h2>score:&nbsp;<span id="output"></span></h2><br>
+  </form>
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
