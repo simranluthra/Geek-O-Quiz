@@ -1,0 +1,179 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>Operators</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#btn-submit").click(function(){
+    //      if($('.score').is(':checked')){
+      //      score = score+1;
+      //    alert(score);
+      //    }
+      //alert( $('input.score:radio:checked').length );
+    //  document.write($('input.score:radio:checked').length);
+        $("#output").html($('input.score:radio:checked').length);
+      })
+      $("#btn-reset").click(function(){
+        $("#myForm")[0].reset();
+        $("#output").html($('input.score:radio:checked').length);
+        $('h1').hide();
+      });
+      });
+    //  function reset(){
+    //    document.getElementById("myForm").reset();
+  //    }
+    </script>
+
+
+  </head>
+  <body ng-app="">
+
+    <div class="container-fluid">
+    <nav class="navbar bg-dark text-white">
+    <h2>Operators<h2>
+</nav>
+</div>
+    <br><br>
+
+    <div class="container">
+      <div class="compiler">
+        <h3>Having trouble solving the problem</h3>
+        <p>Code, Compile & Run</p>
+        <a href="https://www.codechef.com/ide"><button class="btn btn-info">Run on IDE</button></a>
+      </div>
+
+
+
+    <form id="myForm">
+      Question 1
+      <hr>
+      What is the output of the following code :<br>
+      print 9//2<br>
+           <br>
+
+     <input type="radio" ng-model="py" value="1">4.5<br>
+     <input type="radio" ng-model="py" value="2">4.0<br>
+     <input type="radio" ng-model="py" value="3" class="score">4<br>
+     <input type="radio" ng-model="py" value="4">Error<br><br>
+
+
+     <div ng-switch="py">
+       <div ng-switch-when="1">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="2">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="3">
+    <h1>4</h1>
+   </div>
+   <div ng-switch-when="4">
+    <h1>Wrong</h1>
+   </div>
+   </div>
+  Question 2
+  <hr>
+  Which function overloads the >> operator?<br>
+  <br>
+         <input type="radio" ng-model="ques2" value="1">more()<br>
+         <input type="radio" ng-model="ques2" value="2">gt()<br>
+         <input type="radio" ng-model="ques2" value="3">ge()<br>
+         <input type="radio" ng-model="ques2" value="4" class="score">None of the above<br><br>
+
+
+
+  <div ng-switch="ques2">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>None of the above</h1>
+</div>
+</div>
+  Question 3
+  <hr>
+  Which operator is overloaded by the or() function?<br>
+<br><br>
+         <input type="radio" ng-model="ques3" value="1">||<br>
+         <input type="radio" ng-model="ques3" value="2" class="score">|<br>
+         <input type="radio" ng-model="ques3" value="3">//<br>
+         <input type="radio" ng-model="ques3" value="4">/<br><br>
+
+
+  <div ng-switch="ques3">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>|</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  Question 4
+  <hr>
+  What is the output of the following program :<br>
+  i = 0<br>
+  while i < 3:<br>
+         print i<br>
+         i++<br>
+         print i+1
+
+<br><br>
+         <input type="radio" ng-model="ques4" value="1">0 2 1 3 2 4<br>
+         <input type="radio" ng-model="ques4" value="2">0 1 2 3 4 5<br>
+         <input type="radio" ng-model="ques4" value="3" class="score">Error<br>
+         <input type="radio" ng-model="ques4" value="4">1 0 2 4 3 5<br><br>
+
+
+  <div ng-switch="ques4">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Error</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+
+  <button type="submit" name="submit" id="btn-submit">Submit</button>
+  <button type="reset" name="Reset" onclick="reset()" id="btn-reset">Reset</button><br><br>
+  <h2>score:&nbsp;<span id="output"></span></h2><br>
+  </form>
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

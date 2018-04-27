@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>Data Types</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#btn-submit").click(function(){
+    //      if($('.score').is(':checked')){
+      //      score = score+1;
+      //    alert(score);
+      //    }
+      //alert( $('input.score:radio:checked').length );
+    //  document.write($('input.score:radio:checked').length);
+        $("#output").html($('input.score:radio:checked').length);
+      })
+      $("#btn-reset").click(function(){
+        $("#myForm")[0].reset();
+        $("#output").html($('input.score:radio:checked').length);
+        $('h1').hide();
+      });
+      });
+    //  function reset(){
+    //    document.getElementById("myForm").reset();
+  //    }
+    </script>
+
+
+  </head>
+  <body ng-app="">
+
+    <div class="container-fluid">
+    <nav class="navbar bg-dark text-white">
+    <h2>Data types<h2>
+</nav>
+</div>
+    <br><br>
+
+    <div class="container">
+      <div class="compiler">
+        <h3>Having trouble solving the problem</h3>
+        <p>Code, Compile & Run</p>
+        <a href="https://www.codechef.com/ide"><button class="btn btn-info">Run on IDE</button></a>
+      </div>
+
+
+
+    <form id="myForm">
+      Question 1
+      <hr>
+      Which of these is not a core data type?<br>
+           <br>
+
+     <input type="radio" ng-model="py" value="1">Lists<br>
+     <input type="radio" ng-model="py" value="2">Dictionary<br>
+     <input type="radio" ng-model="py" value="3">Tuples<br>
+     <input type="radio" ng-model="py" value="4" class="score">Class<br><br>
+
+
+     <div ng-switch="py">
+       <div ng-switch-when="1">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="2">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="3">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="4">
+    <h1>Class</h1>
+   </div>
+   </div>
+  Question 2
+  <hr>
+  What data type is the object below ? L = [1, 23, ‘hello’, 1]<br>
+  <br>
+         <input type="radio" ng-model="ques2" value="1" class="score">List<br>
+         <input type="radio" ng-model="ques2" value="2">Dictionary<br>
+         <input type="radio" ng-model="ques2" value="3">Tuple<br>
+         <input type="radio" ng-model="ques2" value="4">Array<br><br>
+
+
+
+  <div ng-switch="ques2">
+    <div ng-switch-when="1">
+ <h1>List</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+</div>
+  Question 3
+  <hr>
+  Which of the following function convert a string to a float in python?<br>
+<br><br>
+         <input type="radio" ng-model="ques3" value="1">int(x [,base])<br>
+         <input type="radio" ng-model="ques3" value="2">long(x [,base] )<br>
+         <input type="radio" ng-model="ques3" value="3" class="score">float(x)<br>
+         <input type="radio" ng-model="ques3" value="4">str(x)<br><br>
+
+
+  <div ng-switch="ques3">
+    <div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>float(x)</h1>
+</div>
+<div ng-switch-when="4">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  <button type="submit" name="submit" id="btn-submit">Submit</button>
+  <button type="reset" name="Reset" onclick="reset()" id="btn-reset">Reset</button><br><br>
+  <h2>score:&nbsp;<span id="output"></span></h2><br>
+  </form>
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

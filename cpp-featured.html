@@ -1,0 +1,212 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>CPP</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#btn-submit").click(function(){
+    //      if($('.score').is(':checked')){
+      //      score = score+1;
+      //    alert(score);
+      //    }
+      //alert( $('input.score:radio:checked').length );
+    //  document.write($('input.score:radio:checked').length);
+        $("#output").html($('input.score:radio:checked').length);
+      })
+      $("#btn-reset").click(function(){
+        $("#myForm")[0].reset();
+        $("#output").html($('input.score:radio:checked').length);
+        $('h1').hide();
+      });
+      });
+    //  function reset(){
+    //    document.getElementById("myForm").reset();
+  //    }
+    </script>
+
+
+  </head>
+  <body ng-app="">
+
+    <div class="container-fluid">
+    <nav class="navbar bg-dark text-white">
+    <h2>Some Featured Questions on C++<h2>
+</nav>
+</div>
+    <br><br>
+
+    <div class="container">
+      <div class="compiler">
+        <h3>Having trouble solving the problem</h3>
+        <p>Code, Compile & Run</p>
+        <a href="https://www.codechef.com/ide"><button class="btn btn-info">Run on IDE</button></a>
+      </div>
+
+
+
+    <form id="myForm">
+      Question 1
+      <hr>
+      #include<iostream><br>
+        using namespace std;<br>
+        <br>
+        class Empty {};<br>
+        <br>
+        int main()<br>
+        {<br>
+          cout << sizeof(Empty);<br>
+          return 0;<br>
+        }<br><br>
+     <input type="radio" ng-model="c" value="0" class="score">A non-zero value<br>
+     <input type="radio" ng-model="c" value="1">0<br>
+     <input type="radio" ng-model="c" value="2">Compiler Error<br>
+     <input type="radio" ng-model="c" value="3">Runtime Error<br><br>
+
+
+     <div ng-switch="c">
+       <div ng-switch-when="0">
+    <h1>A non-zero value</h1>
+   </div>
+   <div ng-switch-when="1">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="2">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="3">
+    <h1>Wrong</h1>
+   </div>
+   </div>
+  Question 2
+  <hr>
+  class Test {<br>
+    int x; <br>
+};<br>
+int main()<br>
+{<br>
+  Test t;<br>
+  cout << t.x;<br>
+  return 0;<br>
+}<br><br>
+         <input type="radio" ng-model="ques2" value="0">0<br>
+         <input type="radio" ng-model="ques2" value="1" class="score">Compiler Error<br>
+         <input type="radio" ng-model="ques2" value="2">Garbage value<br>
+<br><br>
+
+  <div ng-switch="ques2">
+    <div ng-switch-when="0">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="1">
+ <h1>Compiler Error</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  Question 3
+  <hr>
+  #include<iostream><br>
+    using namespace std;<br>
+  class Point {<br>
+    Point() { cout << "Constructor called"; }<br>
+  };<br>
+  <br>
+  int main()<br>
+  {<br>
+   Point t1;<br>
+   return 0;<br>
+  }
+  <br><br>
+         <input type="radio" ng-model="ques3" value="0" class="score">Compiler Error<br>
+         <input type="radio" ng-model="ques3" value="1">Runtime Error<br>
+         <input type="radio" ng-model="ques3" value="2">Constructor called<br><br><br>
+
+
+  <div ng-switch="ques3">
+    <div ng-switch-when="0">
+  <h1>Compiler Error</h1>
+  </div>
+  <div ng-switch-when="1">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="2">
+  <h1>Wrong</h1>
+  </div>
+  </div>
+
+  Question 4
+  <hr>
+  A destructor takes __________ arguments.
+<br><br>
+         <input type="radio" ng-model="ques4" value="0" >one<br>
+         <input type="radio" ng-model="ques4" value="1">two<br>
+         <input type="radio" ng-model="ques4" value="2">three<br>
+         <input type="radio" ng-model="ques4" value="3" class="score">no<br>
+
+
+
+  <div ng-switch="ques4">
+    <div ng-switch-when="0">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+    <h1>no</h1>
+   </div>
+  </div>
+  Question 5
+  <hr>
+  What should be put in a try block?<br><br>
+  1. Statements that might cause exceptions<br><br>
+  2. Statements that should be skipped in case of an exception <br><br>
+
+         <input type="radio" ng-model="ques5" value="1">Only 1<br>
+         <input type="radio" ng-model="ques5" value="2">Only 2<br>
+         <input type="radio" ng-model="ques5" value="3" class="score">Both 1 and 2<br><br>
+
+
+
+  <div ng-switch="ques5">
+
+<div ng-switch-when="1">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="2">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="3">
+ <h1>Both 1 and 2</h1>
+</div>
+</div>
+  <button type="submit" name="submit" id="btn-submit">Submit</button>
+  <button type="reset" name="Reset" onclick="reset()" id="btn-reset">Reset</button><br><br>
+  <h2>score:&nbsp;<span id="output"></span></h2><br>
+  </form>
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

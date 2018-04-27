@@ -1,0 +1,279 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>C</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#btn-submit").click(function(){
+    //      if($('.score').is(':checked')){
+      //      score = score+1;
+      //    alert(score);
+      //    }
+      //alert( $('input.score:radio:checked').length );
+    //  document.write($('input.score:radio:checked').length);
+        $("#output").html($('input.score:radio:checked').length);
+      })
+      $("#btn-reset").click(function(){
+        $("#myForm")[0].reset();
+        $("#output").html($('input.score:radio:checked').length);
+        $('h1').hide();
+      });
+      });
+    //  function reset(){
+    //    document.getElementById("myForm").reset();
+  //    }
+    </script>
+
+
+  </head>
+  <body ng-app="">
+
+    <div class="container-fluid">
+    <nav class="navbar bg-dark text-white">
+    <h2>Some Featured Questions on C<h2>
+</nav>
+</div>
+    <br><br>
+
+    <div class="container">
+      <div class="compiler">
+        <h3>Having trouble solving the problem</h3>
+        <p>Code, Compile & Run</p>
+        <a href="https://www.codechef.com/ide"><button class="btn btn-info">Run on IDE</button></a>
+      </div>
+
+
+
+    <form id="myForm">
+      Question 1
+      <hr>
+      Predict the output of below program:<br>
+      #include "stdio.h"<br>
+
+      int main()<br>
+      {<br>
+          int arr[5];<br>
+
+          // Assume that base address of arr is 2000 and size of integer<br>
+              // is 32 bit<br>
+          arr++;<br>
+          printf("%u", arr);<br>
+
+          return 0;<br>
+      }
+           <br>
+
+     <input type="radio" ng-model="c" value="1">2002<br>
+     <input type="radio" ng-model="c" value="2">2004<br>
+     <input type="radio" ng-model="c" value="3">2020<br>
+     <input type="radio" ng-model="c" value="4" class="score">lvalue required<br><br>
+
+
+     <div ng-switch="c">
+       <div ng-switch-when="1">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="2">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="3">
+    <h1>Wrong</h1>
+   </div>
+   <div ng-switch-when="4">
+    <h1>lvalue required</h1>
+   </div>
+   </div>
+  Question 2
+  <hr>
+  #include "stdio.h"<br>
+    int main(){<br>
+       int i = 1024;<br>
+       for (; i; i >>= 1)<br>
+           printf("GeeksQuiz");<br>
+       return 0;<br>}
+       <p>How many times will GeeksQuiz be printed in the above program?</p>
+       <br>
+
+ <input type="radio" ng-model="ques2" value="10">10<br>
+ <input type="radio" ng-model="ques2" value="11" class="score">11<br>
+ <input type="radio" ng-model="ques2" value="infinite">Infinite<br>
+ <input type="radio" ng-model="ques2" value="compiler error">compiler error<br><br>
+
+
+   <div ng-switch="ques2">
+     <div ng-switch-when="10">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="11">
+  <h1>11</h1>
+  </div>
+  <div ng-switch-when="infinite">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="compiler error">
+  <h1>Wrong</h1>
+  </div>
+  </div>
+  Question 3
+  <hr>
+  #include "stdio.h"<br>
+  int main()<br>
+  {<br>
+      int i = 5;<br>
+      printf("%d %d %d", i++, i++, i++);<br>
+      return 0;<br>
+  }
+       <br>
+
+ <input type="radio" ng-model="ques3" value="1">7 6 5<br>
+ <input type="radio" ng-model="ques3" value="2">5 6 7<br>
+ <input type="radio" ng-model="ques3" value="3">7 7 7<br>
+ <input type="radio" ng-model="ques3" value="4" class="score">compiler dependent<br><br>
+
+
+   <div ng-switch="ques3">
+     <div ng-switch-when="1">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="2">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="3">
+  <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="4">
+  <h1>Compiler dependent</h1>
+  </div>
+  </div>
+  Question 4
+  <hr>
+  # include "stdio.h"<br>
+  void fun(int *ptr)<br>
+  {<br>
+   *ptr = 30;<br>
+ }<br>
+
+  int main()<br>
+  {<br>
+  int y = 20;<br>
+  fun(&y);<br>
+  printf("%d", y);<br>
+
+  return 0;<br>
+  }<br>
+         <input type="radio" ng-model="ques4" value="1">20<br>
+         <input type="radio" ng-model="ques4" value="2" class="score">30<br>
+         <input type="radio" ng-model="ques4" value="3">compiler error<br>
+         <input type="radio" ng-model="ques4" value="4">Runtime Error<br><br>
+
+
+
+    <div ng-switch="ques4">
+      <div ng-switch-when="1">
+   <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="2">
+   <h1>30</h1>
+  </div>
+  <div ng-switch-when="3">
+   <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="4">
+   <h1>Wrong</h1>
+  </div>
+  </div>
+
+  Question 5
+  <hr>
+  Predict the output?<br>
+  #include "stdio.h"<br>
+  int fun(char *str1)<br>
+  {<br>
+    char *str2 = str1;<br>
+    while(*++str1);<br>
+    return (str1-str2);<br>
+  }<br>
+
+  int main()<br>
+  {<br>
+    char *str = "GeeksQuiz";<br>
+    printf("%d", fun(str));<br>
+    return 0;<br>
+  }<br>
+  <br>
+         <input type="radio" ng-model="ques5" value="1">10<br>
+         <input type="radio" ng-model="ques5" value="2" class="score">9<br>
+         <input type="radio" ng-model="ques5" value="3">8<br>
+         <input type="radio" ng-model="ques5" value="4">Random Number<br><br>
+
+
+
+    <div ng-switch="ques5">
+      <div ng-switch-when="1">
+   <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="2">
+   <h1>9</h1>
+  </div>
+  <div ng-switch-when="3">
+   <h1>Wrong</h1>
+  </div>
+  <div ng-switch-when="4">
+   <h1>Wrong</h1>
+  </div>
+  </div>
+  Question 6
+  <hr>
+  #include "stdio.h"<br>
+   int main(){<br>
+    int i = 5, j = 10, k = 15;<br>
+    printf("%d ", sizeof(k /= i + j));<br>
+    printf("%d", k);<br>
+    return 0;}<br>
+<br><br>
+         <input type="radio" ng-model="ques6" value="41">4&nbsp;1<br>
+         <input type="radio" ng-model="ques6" value="415" class="score">4&nbsp;15<br>
+         <input type="radio" ng-model="ques6" value="21">2&nbsp;1<br>
+         <input type="radio" ng-model="ques6" value="compiler error">compiler error<br><br>
+
+
+  <div ng-switch="ques6">
+    <div ng-switch-when="41">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="415">
+ <h1>4&nbsp;15</h1>
+</div>
+<div ng-switch-when="21">
+ <h1>Wrong</h1>
+</div>
+<div ng-switch-when="compiler error">
+ <h1>Wrong</h1>
+</div>
+  </div>
+  <button type="submit" name="submit" id="btn-submit">Submit</button>
+  <button type="reset" name="Reset" onclick="reset()" id="btn-reset">Reset</button><br><br>
+  <h2>score:&nbsp;<span id="output"></span></h2><br>
+  </form>
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
